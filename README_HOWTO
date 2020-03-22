@@ -1,0 +1,14 @@
+This is the procedure for MAC OSX or Linux (Debian)
+To drag data from RKI Web page open a shell . The following commands are execute from a shell - I use bash
+
+python3 rki_get_data.py
+
+#this creates a file e.g. RKI_Corona_2020-03-22T13:26:33.652350
+#convert this file to comma separated text files and select certain columns
+
+RKI2CSV.bash -f=RKI_Corona_2020-03-22T13:26:33.652350
+
+# cat file to case file, which is dragged by german.py from the covid19_scenarios_data github package
+# (path: covid19_scenarios_data/parsers/)
+
+cat RKI_Corona_2020-03-22T13\:26\:33.652350.csv  >> COVID19_Cases_Bundeslaender_DE.csv 
