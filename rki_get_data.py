@@ -41,10 +41,9 @@ table = soup.find('table')
 
 dt_date = datetime.datetime.now()
 date    = datetime.date.today()
-print ("The Current date is:" ,dt_date)
-print("In specified format:", dt_date.isoformat())
+#print ("The Current date is:" ,dt_date)
+#print("In specified format:", dt_date.isoformat())
 filename='RKI_Corona_'+dt_date.isoformat()
-print(filename)
 f1=open(filename, 'w')
 
 rows = table.find_all('tr')
@@ -62,3 +61,5 @@ for row in rows:
     #data.append([ele for ele in cols if ele])
 
 f1.close()
+
+print(filename)
