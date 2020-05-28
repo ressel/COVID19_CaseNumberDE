@@ -55,7 +55,8 @@ for row in rows:
       number  = cols[1].text.strip()
       diff    = cols[2].text.strip()
       np100t  = cols[3].text.strip()
-      dead    = cols[4].text.strip()
+      inc7    = cols[4].text.strip()
+      dead    = cols[5].text.strip()
       f1.write("%s, %s, %s, %s, %s, %s\n" % (date, country, number, diff, np100t, dead))
     #cols = [ele.text.strip() for ele in cols]
     #data.append([ele for ele in cols if ele])
