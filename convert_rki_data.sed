@@ -1,3 +1,4 @@
+8{N;s/\n//;}
 s/­//g
 s/\.//g
 s/+//g
@@ -12,6 +13,7 @@ s/Bremen/HB/g
 s/Hamburg/HH/g
 s/Hessen/HE/g
 s/Mecklenburg-Vorpommern/MV/g
+s/lenburg-\n/lenburg-/g
 s/Meck-lenburg-Vorpommern/MV/g
 s/Niedersachsen/NI/g
 s/Nieder-sachsen/NI/g
