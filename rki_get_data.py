@@ -9,6 +9,9 @@ from bs4 import BeautifulSoup
 #url = 'http://web.mta.info/developers/turnstile.html'
 url = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html'
 
+#protected by a haptcha - 2020-10-22
+#this does not work any longer
+
 # Connect to the URL
 response = requests.get(url)
 #print (response)
@@ -16,11 +19,18 @@ response = requests.get(url)
 # Parse HTML and save to BeautifulSoup object¶
 soup = BeautifulSoup(response.text, "html.parser")
 #print(soup)
+#print(soup.prettify())
 
-#print (soup.findAll('td'))
+#js_test = soup.find('p', class_='jstest')
+#print(js_test.text)
+
+print (soup.findAll('td'))
 
 data = []
 table = soup.find('table')
+print(table)
+table = soup.find('table')
+print(table)
 #rows = table.findAll('tr')
 #for row in rows:
 #    print(row)
