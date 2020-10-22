@@ -16,8 +16,20 @@ case $i in
 esac
 done
 echo "FILE = ${FILE}"
-if [[ -n $FILE ]]; then
+rm TODAY
+DATE=`date "+%Y-%m-%d"`
+for value in {1..17}
+do
+echo $DATE >> TODAY
+done
+
+if [[ -n $FILE && -n $DATE ]]; then
     echo "convert RKI to CSV:"
-    sed -f convert_rki_data.sed  $FILE | cut -d "," -f 1-3,6 > ${FILE}.csv
+# before CAPCHA was installed 2020-10-22
+#   sed -f convert_rki_data.sed  $FILE | cut -d "," -f 1-3,6 > ${FILE}.csv
+# since 2020-10-22
+    sed -f convert_rki_data.sed  $FILE | cut -d ";" -f 1-2,6 > ${FILE}.sed
 fi
+
+paste -d";" TODAY ${FILE}.sed > ${FILE}.csv
 
