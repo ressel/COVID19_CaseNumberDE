@@ -1,9 +1,10 @@
-8{N;s/\n//;}
 s/­//g
 s/\.//g
+s/\,/\./g
 s/+//g
 s/*//g
 s/ //g
+s/	/;/g
 s/Baden-Württemberg/BW/g
 s/Bayern/BY/g
 s/Berlin/BE/g
@@ -13,10 +14,7 @@ s/Bremen/HB/g
 s/Hamburg/HH/g
 s/Hessen/HE/g
 s/Mecklenburg-Vorpommern/MV/g
-s/lenburg-\n/lenburg-/g
-s/Meck-lenburg-Vorpommern/MV/g
 s/Niedersachsen/NI/g
-s/Nieder-sachsen/NI/g
 s/Nordrhein-Westfalen/NW/g
 s/Nord-rhein-Westfalen/NW/g
 s/RheinlandPfalz/RP/g
