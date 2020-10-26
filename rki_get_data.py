@@ -64,3 +64,6 @@ for row in rows:
 f1.close()
 
 print(filename)
+f2=open("file_of_the_day", 'w')
+f2.write("%s\n" % filename)
+f2.close
