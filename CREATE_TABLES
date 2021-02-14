@@ -1,0 +1,32 @@
+#!/bin/bash
+# script for tesing
+clear
+echo "............script started............"
+#sleep 1
+
+DIR="RKIcasenumbers"
+VARNAME="BW , BY , BE , BB , HB , HH , HE , MV , NI , NW , RP , SL , SN , ST , SH , TH , DE, Datum"
+echo ${VARNAME} > TABLE_FALLZAHL
+echo ${VARNAME} > TABLE_NEUEFAELLE
+echo ${VARNAME} > TABLE_7DFAELLE
+echo ${VARNAME} > TABLE_7DI
+echo ${VARNAME} > TABLE_TODESFAELLE
+for filename in ${DIR}/*ALL; do
+     ./RKI2LINES.bash -f=${filename} -c=3 >> TABLE_FALLZAHL
+done
+
+for filename in ${DIR}/*ALL; do
+     ./RKI2LINES.bash -f=${filename} -c=4 >> TABLE_NEUEFAELLE
+done
+
+for filename in ${DIR}/*ALL; do
+     ./RKI2LINES.bash -f=${filename} -c=5 >> TABLE_7DFAELLE
+done
+
+for filename in ${DIR}/*ALL; do
+     ./RKI2LINES.bash -f=${filename} -c=6 >> TABLE_7DI
+done
+
+for filename in ${DIR}/*ALL; do
+     ./RKI2LINES.bash -f=${filename} -c=7 >> TABLE_TODESFAELLE
+done

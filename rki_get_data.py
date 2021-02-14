@@ -44,7 +44,10 @@ date    = datetime.date.today()
 #print ("The Current date is:" ,dt_date)
 #print("In specified format:", dt_date.isoformat())
 filename='RKI_Corona_'+dt_date.isoformat()
+#this file contais all data from the RKI table
+filename3='RKI_Corona_'+dt_date.isoformat()+'ALL'
 f1=open(filename, 'w')
+f3=open(filename3, 'w')
 
 rows = table.find_all('tr')
 #print(rows)
@@ -58,10 +61,12 @@ for row in rows:
       inc7    = cols[4].text.strip()
       dead    = cols[5].text.strip()
       f1.write("%s, %s, %s, %s, %s, %s\n" % (date, country, number, diff, np100t, dead))
+      f3.write("%s, %s, %s, %s, %s, %s, %s\n" % (date, country, number, diff, np100t, inc7, dead))
     #cols = [ele.text.strip() for ele in cols]
     #data.append([ele for ele in cols if ele])
 
 f1.close()
+f3.close()
 
 print(filename)
 f2=open("file_of_the_day", 'w')
