@@ -31,13 +31,15 @@ if [ ${NOQUIT} -eq "1" ]; then
 fi
 
 if [[ -n $FILE ]] &&  [[ -n $COLUMN ]]; then
+    DATE=`echo ${FILE} | sed "s/RKIcasenumbers\/RKI_Corona_//" | cut -f 1 -d"T"`
     #echo "convert RKI to TABLE:"
     NI=`sed -f convert_rki_data.sed $FILE | cut -f $COLUMN -d ","`
+    printf "$DATE,"
     for ni in $NI
     do
-        printf "$ni , "
+        printf "$ni,"
     done
-    printf "$FILE \n"
+    printf "${FILE}\n"
 fi
 
 
