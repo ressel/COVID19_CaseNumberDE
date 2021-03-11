@@ -17,11 +17,21 @@ response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
 #print(soup)
 
+#am Anfang der Seite
+Tags = soup.findAll("div", {"id":"main"})
+#print(Tags)
+for tag in Tags:
+     #print(tag)
+     Stand = tag.p
+print('Datum am Anfang der Seite: ' )
+print(Stand)
+    
+#am Ende der Seite
 Tags = soup.findAll("div", {"class":"dateOfIssue"})
 for tag in Tags:
-    #print(tag)
-    Stand = tag.find("p")
-    #print(Stand)
-    Datum=Stand.string.split(":")[1].strip()
-    
+     #print(tag)
+     Stand = tag.find("p")
+     Datum=Stand.string.split(":")[1].strip()
+print('Datum am Ende der Seite: ')
 print(Datum)
+
