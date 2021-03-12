@@ -23,7 +23,7 @@ Tags = soup.findAll("div", {"id":"main"})
 for tag in Tags:
      #print(tag)
      Stand = tag.p
-print('Datum am Anfang der Seite: ' )
+print('\nDatum am Anfang der Seite: ' )
 print(Stand)
     
 #am Ende der Seite
@@ -32,6 +32,6 @@ for tag in Tags:
      #print(tag)
      Stand = tag.find("p")
      Datum=Stand.string.split(":")[1].strip()
-print('Datum am Ende der Seite: ')
+print('\nDatum am Ende der Seite: ')
 print(Datum)
 
