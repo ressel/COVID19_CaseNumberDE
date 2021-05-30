@@ -34,10 +34,10 @@ if [[ -n $FILE ]] &&  [[ -n $COLUMN ]]; then
     DATE=`echo ${FILE} | sed "s/RKIcasenumbers\/RKI_Corona_//" | cut -f 1 -d"T"`
     #echo "convert RKI to TABLE:"
     NI=`sed -f convert_rki_data.sed $FILE | cut -f $COLUMN -d ","`
-    printf "$DATE,"
+    printf "%s," ${DATE}
     for ni in $NI
     do
-        printf "$ni,"
+        printf "%i," ${ni}
     done
     printf "${FILE}\n"
 fi
