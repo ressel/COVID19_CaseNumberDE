@@ -20,11 +20,25 @@ soup = BeautifulSoup(response.text, "html.parser")
 #am Anfang der Seite
 Tags = soup.findAll("div", {"id":"main"})
 #print(Tags)
+count=0;
 for tag in Tags:
-     #print(tag)
-     Stand = tag.p
-print('\nDatum am Anfang der Seite: ' )
-print(Stand)
+    #print(tag)
+    #print ('\n\n')
+    Stand1 = tag.findAll("p")
+    for tag2 in Stand1:
+        count = count + 1;
+    #Datum1=Stand1.string.split(":")[1].strip()
+    #print(Datum1)
+        #print(tag2)
+#    print('\ncount = ', count)
+        if count == 2:
+            print('\nDatum am ANFANG der Seite: ')
+            print(tag2)
+            print('\n')
+            
+        
+#print('\nDatum am Anfang der Seite: ' )
+#print(Stand1)
     
 #am Ende der Seite
 Tags = soup.findAll("div", {"class":"dateOfIssue"})
