@@ -3,6 +3,8 @@ s/­//g
 s/\.//g
 s/+//g
 s/*//g
+s/, /; /g
+s/,/./g
 s/ //g
 s/Baden-Württemberg/BW/g
 s/Bayern/BY/g

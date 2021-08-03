@@ -5,7 +5,7 @@ echo "............script started............"
 #sleep 1
 
 DIR="RKIcasenumbers"
-VARNAME="Datum,BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH,DE,File"
+VARNAME="Datum;BW;BY;BE;BB;HB;HH;HE;MV;NI;NW;RP;SL;SN;ST;SH;TH;DE;File"
 #echo ${VARNAME} > TABLE_FALLZAHL
 echo ${VARNAME} > TABLE_NEUEFAELLE.csv
 #echo ${VARNAME} > TABLE_7DFAELLE
@@ -31,7 +31,7 @@ for filename in ${DIR}/*ALL; do
 done
 
 for filename in ${DIR}/*ALL; do
-     ./RKI2LINES.bash -f=${filename} -c=6 >> TABLE_7DI.csv
+     ./RKI2LINES.bash -f=${filename} -c=6 -d >> TABLE_7DI.csv
 done
 
 for filename in ${DIR}/*ALL; do

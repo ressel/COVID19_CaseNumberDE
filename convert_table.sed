@@ -5,7 +5,7 @@ s/–/0/g
 s/\.//g
 s/+//g
 s/*//g
-s/	/,/g
+s/	/;/g
 s/Baden-Württemberg/BW/g
 s/Bayern/BY/g
 s/Berlin/BE/g
