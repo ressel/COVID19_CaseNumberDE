@@ -30,11 +30,9 @@ for tag in Tags:
     #Datum1=Stand1.string.split(":")[1].strip()
     #print(Datum1)
         #print(tag2)
-#    print('\ncount = ', count)
-        if count == 2:
-            print('\nDatum am ANFANG der Seite: ')
-            print(tag2)
-            print('\n')
+#    print("\ncount = ", count)
+        if count == 1:
+            print("\nDatum am ANFANG der Seite: ", tag2, end='\n')
             
         
 #print('\nDatum am Anfang der Seite: ' )
@@ -46,6 +44,6 @@ for tag in Tags:
      #print(tag)
      Stand = tag.find("p")
      Datum=Stand.string.split(":")[1].strip()
-print('\nDatum am Ende der Seite: ')
+print("\nDatum am Ende der Seite: ")
 print(Datum)
 
